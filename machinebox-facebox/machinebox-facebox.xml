@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Date>2021/10/09</Date>
-  <TemplateURL>https://raw.githubusercontent.com/corgan2222/unraid-templates/master/machinebox-facebox/machinebox-facebox.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/machinebox-facebox/machinebox-facebox.xml</TemplateURL>
   <Beta>True</Beta>  
   <Name>machinebox-facebox</Name>
   <Repository>machinebox/facebox</Repository>
@@ -17,13 +17,13 @@
  Facebox required that you have an API Key which you can obtain for free by going to https://machinebox.io/login?return_url=%2Faccount</Overview>
   <Category>HomeAutomation: Security: Tools: Status:Beta</Category>
   <WebUI>http://[IP]:[PORT:8080]</WebUI>
-  <Icon>https://machinebox.io/assets/static/img/boxes/facebox.jpg</Icon>
+  <Icon>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/img/facebox.jpg</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
   <DonateText/>
   <DonateLink/>
-  <Description>with more settings&#xD;
+  <Description>With this container you have all possible settings available[br]&#xD;
  Facebox detects and identifies faces in photos. You can teach facebox with as little as one sample image.&#xD;
  Facebox required that you have an API Key which you can obtain for free by going to https://machinebox.io/login?return_url=%2Faccount</Description>
   <Networking>

@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>double-take</Name>
+  <Date>2021/10/09</Date>
+  <TemplateURL>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/machinebox-facebox/machinebox-facebox.xml</TemplateURL>  
   <Repository>jakowenko/double-take</Repository>
   <Registry>https://hub.docker.com/r/jakowenko/double-take/</Registry>
   <Network>bridge</Network>
@@ -11,8 +13,7 @@
   <Overview>Unified UI and API for processing and training images for facial recognition.  </Overview>
   <Category>HomeAutomation: Productivity: Tools:</Category>
   <WebUI>http://[IP]:[PORT:3000]</WebUI>
-  <TemplateURL/>
-  <Icon>https://github.com/jakowenko/double-take/raw/master/frontend/public/apple-touch-icon.png</Icon>
+  <Icon>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/img/double-take.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>

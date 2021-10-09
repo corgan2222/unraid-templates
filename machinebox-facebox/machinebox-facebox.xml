@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Date>2021/10/09</Date>
+  <TemplateURL>https://raw.githubusercontent.com/corgan2222/unraid-templates/master/machinebox-facebox/machinebox-facebox.xml</TemplateURL>
+  <Beta>True</Beta>  
+  <Name>machinebox-facebox</Name>
+  <Repository>machinebox/facebox</Repository>
+  <Registry>https://hub.docker.com/r/machinebox/facebox/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support></Support>
+  <Project>https://machinebox.io/docs/facebox</Project>
+  <Overview>With this container you have all possible settings available[br]&#xD;
+ Facebox detects and identifies faces in photos. You can teach facebox with as little as one sample image.&#xD;
+ Facebox required that you have an API Key which you can obtain for free by going to https://machinebox.io/login?return_url=%2Faccount</Overview>
+  <Category>HomeAutomation: Security: Tools: Status:Beta</Category>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <Icon>https://machinebox.io/assets/static/img/boxes/facebox.jpg</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>with more settings&#xD;
+ Facebox detects and identifies faces in photos. You can teach facebox with as little as one sample image.&#xD;
+ Facebox required that you have an API Key which you can obtain for free by going to https://machinebox.io/login?return_url=%2Faccount</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value></Value>
+      <Name>MB_KEY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0.0.0.0</Value>
+      <Name>MB_ADDRESS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MB_FACEBOX_REDIS_DB</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>60</Value>
+      <Name>MB_DOWNLOAD_TIMEOUT_SECONDS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>MB_FACEBOX_READ_ONLY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>2</Value>
+      <Name>MB_FACEBOX_INDEX_REFRESH_SECONDS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value> false</Value>
+      <Name>MB_FACEBOX_DISABLE_RECOGNITION</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MB_BASICAUTH_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MB_BASICAUTH_PASS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MB_FACEBOX_REDIS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MB_FACEBOX_REDIS_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MB_FACEBOX_STATE_URL </Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>MB_FACEBOX_STATE_POLL_SECONDS </Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>MB_DISABLE_CORS</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="API_KEY" Target="MB_KEY" Default="" Mode="" Description="Container Variable: MB_KEY" Type="Variable" Display="always" Required="true" Mask="false">OTRmNWYwN2Q0M2Q4MGM3ZDY4NzJlYTIyODFhYjA5NTU.OxrrQ_6G4gvArMZ2KPz0mtUsDjjgy44Uy83QW_ajLaP52Ts6Z85PR8i8WuG2ywqebBPNm7cHu8P3tlWGHXGAwA</Config>
+  <Config Name="MB_PORT" Target="8080" Default="8080" Mode="tcp" Description=" (string) Defaults to 8080 - Port where the service will listen. " Type="Port" Display="always" Required="true" Mask="false">8085</Config>
+  <Config Name="MB_ADDRESS" Target="MB_ADDRESS" Default="0.0.0.0" Mode="" Description="- (string) Defaults to 0.0.0.0 - Address where the service will listen. " Type="Variable" Display="always" Required="true" Mask="false">0.0.0.0</Config>
+  <Config Name="MB_FACEBOX_REDIS_DB" Target="MB_FACEBOX_REDIS_DB" Default="" Mode="" Description="Redis DB - (string) Optional Redis database to connect to. " Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MB_DOWNLOAD_TIMEOUT_SECONDS" Target="MB_DOWNLOAD_TIMEOUT_SECONDS" Default="60" Mode="" Description="(integer) Default to 60. Timeout in seconds that Facebox will use when it downloads files, for example to download the state file. " Type="Variable" Display="always" Required="false" Mask="false">60</Config>
+  <Config Name="MB_FACEBOX_READ_ONLY" Target="MB_FACEBOX_READ_ONLY" Default="false" Mode="" Description="(bool) Defaults to false - If true Facebox will be read only. Teaching and updating state will be disabled. Be sure to provide MB_FACEBOX_STATE_URL to set the initial state, otherwise the box will be useless. " Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="MB_FACEBOX_INDEX_REFRESH_SECONDS" Target="MB_FACEBOX_INDEX_REFRESH_SECONDS" Default="2" Mode="" Description="(integer) Defaults to 2 - Number of seconds that Facebox will wait to update the index for new data, or changes in the data. Facebox will accumulate changes to perform an update on the search index, because changes are an expensive operation, with this variable you can adjust the time interval for that operation. " Type="Variable" Display="always" Required="false" Mask="false">2</Config>
+  <Config Name="MB_FACEBOX_DISABLE_RECOGNITION" Target="MB_FACEBOX_DISABLE_RECOGNITION" Default=" false" Mode="" Description="(bool) Defaults to false - If you only need face detection, the recognition algorithms can be disabled by setting this variable to true, saving resources. If you disable recognition, the teaching endpoinds will be disabled as well. " Type="Variable" Display="always" Required="false" Mask="false"> false</Config>
+  <Config Name="MB_BASICAUTH_USER" Target="MB_BASICAUTH_USER" Default="" Mode="" Description="(string) The Basic Authentication username and password that every request must use. Recommended for sitautions where the boxes are publicly accessible." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MB_BASICAUTH_PASS" Target="MB_BASICAUTH_PASS" Default="" Mode="" Description="(string) The Basic Authentication username and password that every request must use. Recommended for sitautions where the boxes are publicly accessible" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MB_FACEBOX_REDIS" Target="MB_FACEBOX_REDIS" Default="" Mode="" Description="- (string) Redis host and port for example my_redis:6379. If this option is present Facebox state will be synced by Redis," Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="MB_FACEBOX_REDIS_PASSWORD" Target="MB_FACEBOX_REDIS_PASSWORD" Default="" Mode="" Description="Redis Password - (string) Optional Redis password. " Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="MB_FACEBOX_STATE_URL" Target="MB_FACEBOX_STATE_URL " Default="" Mode="" Description="(string) URL to a .facebox state file to initialize the box with. Useful for spinning up many instances of Facebox with the same state. " Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="MB_FACEBOX_STATE_POLL_SECONDS" Target="MB_FACEBOX_STATE_POLL_SECONDS " Default="0" Mode="" Description="(integer) Default to 0 (No polling). If this variable is set, Facebox would poll the MB_FACEBOX_STATE_URL for changes on the file, based on the ETag or Last-Modified http headers. If the file changes Facebox will download the new file and update the state of the teaching. This variable is useful for updating multiple running instances of Facebox. " Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="MB_DISABLE_CORS" Target="MB_DISABLE_CORS" Default="false" Mode="" Description="(bool) Defaults to false - If true will turn off CORS support for the box. " Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+</Container>

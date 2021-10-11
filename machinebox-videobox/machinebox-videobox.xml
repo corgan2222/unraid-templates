@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>machinebox-videobox</Name>
+  <Repository>machinebox/videobox</Repository>
+  <Registry>https://hub.docker.com/r/machinebox/videobox</Registry>
+  <TemplateURL>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/machinebox-videobox/machinebox-videobox.xml</TemplateURL>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://machinebox.io/docs/videobox</Project>
+  <Support>https://forums.unraid.net/topic/114590-support-corgans-docker-repository/</Support>
+  <Overview>Videobox extracts frames from videos and passes them to other Machine Box boxes for processing. </Overview>
+  <Category>Productivity: Tools: Status:Stable</Category>
+  <WebUI>http://[IP]:[PORT:8084]</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/corgan2222/unraid-templates/raw/main/img/videobox.jpg</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Description> Videobox extracts frames from videos and passes them to other Machine Box boxes for processing.&#xD;
+                Videos are broken into frames (at a frequency you specify) and are processed. &#xD;
+                The results are compressed into a compact and usable format ready for display or further processing. </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8084</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value>0.0.0.0</Value>
+      <Name>MB_ADDRESS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>MB_KEY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>MB_VIDEOBOX_FACEBOX_ADDR</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>MB_VIDEOBOX_TAGBOX_ADDR</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MB_VIDEOBOX_NUDEBOX_ADDR</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>MB_DISABLE_CORS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MB_BASICAUTH_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MB_BASICAUTH_PASS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1h</Value>
+      <Name>MB_VIDEOBOX_RESULT_DURATION</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="MB_PORT" Target="8080" Default="8084" Mode="tcp" Description="(string) Defaults to 8080 - Port where the service will listen. " Type="Port" Display="always" Required="true" Mask="false">8084</Config>
+  <Config Name="MB_ADDRESS" Target="MB_ADDRESS" Default="0.0.0.0" Mode="" Description="(string) Defaults to 0.0.0.0 - Address where the service will listen. " Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0</Config>
+  <Config Name="API_KEY" Target="MB_KEY" Default="" Mode="" Description="Container Variable: MB_KEY&#13;&#10;Get one here https://machinebox.io/login" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="MB_VIDEOBOX_FACEBOX_ADDR" Target="MB_VIDEOBOX_FACEBOX_ADDR" Default="" Mode="" Description="(string) The endpoint for Facebox " Type="Variable" Display="always" Required="false" Mask="false">http://192.168.2.254:8085</Config>
+  <Config Name="MB_VIDEOBOX_TAGBOX_ADDR" Target="MB_VIDEOBOX_TAGBOX_ADDR" Default="" Mode="" Description="string) The endpoint for Tagbox " Type="Variable" Display="always" Required="false" Mask="false">http://192.168.2.254:8082</Config>
+  <Config Name="MB_VIDEOBOX_NUDEBOX_ADDR" Target="MB_VIDEOBOX_NUDEBOX_ADDR" Default="" Mode="" Description="(string) The endpoint for Nudebox " Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MB_DISABLE_CORS" Target="MB_DISABLE_CORS" Default="false" Mode="" Description="(bool) Defaults to false - If true will turn off CORS support for the box. " Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="MB_BASICAUTH_USER" Target="MB_BASICAUTH_USER" Default="" Mode="" Description="(string) The Basic Authentication username and password that every request must use. Recommended for sitautions where the boxes are publicly accessible. " Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="MB_BASICAUTH_PASS" Target="MB_BASICAUTH_PASS" Default="" Mode="" Description="Container Variable: MB_BASICAUTH_PASS" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="MB_VIDEOBOX_RESULT_DURATION" Target="MB_VIDEOBOX_RESULT_DURATION" Default="1h" Mode="" Description="Defaults to 1h (one hour) - Amount of time to keep the results before automatically deleting them " Type="Variable" Display="advanced" Required="false" Mask="false">1h</Config>
+</Container>

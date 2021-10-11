@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>machinebox-tagbox</Name>
+  <Repository>machinebox/tagbox</Repository>
+  <Registry>https://hub.docker.com/r/machinebox/tagbox</Registry>
+  <Date>2021/10/09</Date>
+  <TemplateURL>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/machinebox-tagbox/machinebox-tagbox.xml</TemplateURL>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/114590-support-corgans-docker-repository/</Support>
+  <Project>https://machinebox.io/docs/tagbox</Project>
+  <Overview>Tagbox lets you identify the content of images by getting a list of ordered tags. </Overview>
+  <Category>Productivity: Tools: Status:Stable</Category>
+  <WebUI>http://[IP]:[PORT:8082]</WebUI>
+  <Icon>https://github.com/corgan2222/unraid-templates/raw/main/img/tagbox.jpg</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Tagbox lets you identify the content of images by getting a list of ordered tags. </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8082</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value>false</Value>
+      <Name>MB_TAGBOX_READ_ONLY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>MB_TAGBOX_ONLY_CUSTOM_TAGS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>60</Value>
+      <Name>MB_DOWNLOAD_TIMEOUT_SECONDS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0.0.0.0</Value>
+      <Name>MB_ADDRESS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>MB_KEY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>MB_DISABLE_CORS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MB_BASICAUTH_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MB_BASICAUTH_PASS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MB_TAGBOX_STATE_URL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MB_TAGBOX_STATE_POLL_SECONDS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MB_TAGBOX_INDEX_REFRESH_SECONDS</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="MB_TAGBOX_READ_ONLY" Target="MB_TAGBOX_READ_ONLY" Default="false" Mode="" Description=" (bool) Defaults to false - If true Tagbox will be read only. Teaching and updating state will be disabled. Be sure to provide MB_TAGBOX_STATE_URL to set the initial state, otherwise the box will be useless. " Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="MB_TAGBOX_ONLY_CUSTOM_TAGS" Target="MB_TAGBOX_ONLY_CUSTOM_TAGS" Default="false" Mode="" Description="Container Variable: MB_TAGBOX_ONLY_CUSTOM_TAGS" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="MB_DOWNLOAD_TIMEOUT_SECONDS" Target="MB_DOWNLOAD_TIMEOUT_SECONDS" Default="60" Mode="" Description="(integer) Default to 60. Timeout in seconds that Tagbox will use when it downloads files, for example to download the state file. " Type="Variable" Display="always" Required="false" Mask="false">60</Config>
+  <Config Name="MB_PORT" Target="8080" Default="8082" Mode="tcp" Description="(string) Defaults to 8080 - Port where the service will listen. " Type="Port" Display="always" Required="true" Mask="false">8082</Config>
+  <Config Name="MB_ADDRESS" Target="MB_ADDRESS" Default="0.0.0.0" Mode="" Description="(string) Defaults to 0.0.0.0 - Address where the service will listen. " Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0</Config>
+  <Config Name="API_KEY" Target="MB_KEY" Default="" Mode="" Description="Container Variable: MB_KEY&#13;&#10;Get one here https://machinebox.io/login" Type="Variable" Display="always" Required="true" Mask="false">OTRmNWYwN2Q0M2Q4MGM3ZDY4NzJlYTIyODFhYjA5NTU.OxrrQ_6G4gvArMZ2KPz0mtUsDjjgy44Uy83QW_ajLaP52Ts6Z85PR8i8WuG2ywqebBPNm7cHu8P3tlWGHXGAwA</Config>
+  <Config Name="MB_DISABLE_CORS" Target="MB_DISABLE_CORS" Default="false" Mode="" Description="(bool) Defaults to false - If true will turn off CORS support for the box. " Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="MB_BASICAUTH_USER" Target="MB_BASICAUTH_USER" Default="" Mode="" Description="(string) The Basic Authentication username and password that every request must use. Recommended for sitautions where the boxes are publicly accessible. " Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="MB_BASICAUTH_PASS" Target="MB_BASICAUTH_PASS" Default="" Mode="" Description="Container Variable: MB_BASICAUTH_PASS" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="MB_TAGBOX_STATE_URL" Target="MB_TAGBOX_STATE_URL" Default="" Mode="" Description="(string) URL to a .tagbox state file to initialize the box with. Useful for spinning up many instances of Tagbox with the same state. " Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="MB_TAGBOX_STATE_POLL_SECONDS" Target="MB_TAGBOX_STATE_POLL_SECONDS" Default="" Mode="" Description="(integer) Default to 0 (No polling). If this variable is set, Tagbox would poll the MB_TAGBOX_STATE_URL for changes on the file, based on the ETag or Last-Modified http headers. If the file changes Tagbox will download the new file and update the state of the teaching. This variable is useful for updating multiple running instances of Tagbox. " Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="MB_TAGBOX_INDEX_REFRESH_SECONDS" Target="MB_TAGBOX_INDEX_REFRESH_SECONDS" Default="" Mode="" Description="(integer) Defaults to 2 - Number of seconds that Tagbox will wait to update the index for new data, or changes in the data. Tagbox will accumulate changes to perform an update on the search index, because changes are an expensive operation, with this variable you can adjust the time interval for that operation. " Type="Variable" Display="advanced" Required="false" Mask="false"/>
+</Container>

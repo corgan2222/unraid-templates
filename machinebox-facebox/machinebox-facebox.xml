@@ -2,7 +2,6 @@
 <Container version="2">
   <Date>2021/10/09</Date>
   <TemplateURL>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/machinebox-facebox/machinebox-facebox.xml</TemplateURL>
-  <Beta>True</Beta>  
   <Name>machinebox-facebox</Name>
   <Repository>machinebox/facebox</Repository>
   <Registry>https://hub.docker.com/r/machinebox/facebox/</Registry>
@@ -10,13 +9,13 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support></Support>
+  <Support>https://forums.unraid.net/topic/114590-support-corgans-docker-repository/</Support>
   <Project>https://machinebox.io/docs/facebox</Project>
   <Overview>With this container you have all possible settings available[br]&#xD;
  Facebox detects and identifies faces in photos. You can teach facebox with as little as one sample image.&#xD;
  Facebox required that you have an API Key which you can obtain for free by going to https://machinebox.io/login?return_url=%2Faccount</Overview>
   <Category>HomeAutomation: Security: Tools: Status:Beta</Category>
-  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <WebUI>http://[IP]:[PORT:8081]</WebUI>
   <Icon>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/img/facebox.jpg</Icon>
   <ExtraParams/>
   <PostArgs/>
@@ -30,7 +29,7 @@
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>8080</HostPort>
+        <HostPort>8081</HostPort>
         <ContainerPort>8080</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
@@ -112,7 +111,7 @@
   <Labels/>
   <Config Name="API_KEY" Target="MB_KEY" Default="" Mode="" Description="Container Variable: MB_KEY" Type="Variable" Display="always" Required="true" Mask="false">OTRmNWYwN2Q0M2Q4MGM3ZDY4NzJlYTIyODFhYjA5NTU.OxrrQ_6G4gvArMZ2KPz0mtUsDjjgy44Uy83QW_ajLaP52Ts6Z85PR8i8WuG2ywqebBPNm7cHu8P3tlWGHXGAwA</Config>
   <Config Name="MB_PORT" Target="8080" Default="8080" Mode="tcp" Description=" (string) Defaults to 8080 - Port where the service will listen. " Type="Port" Display="always" Required="true" Mask="false">8085</Config>
-  <Config Name="MB_ADDRESS" Target="MB_ADDRESS" Default="0.0.0.0" Mode="" Description="- (string) Defaults to 0.0.0.0 - Address where the service will listen. " Type="Variable" Display="always" Required="true" Mask="false">0.0.0.0</Config>
+  <Config Name="MB_ADDRESS" Target="MB_ADDRESS" Default="0.0.0.1" Mode="" Description="- (string) Defaults to 0.0.0.0 - Address where the service will listen. " Type="Variable" Display="always" Required="true" Mask="false">0.0.0.0</Config>
   <Config Name="MB_FACEBOX_REDIS_DB" Target="MB_FACEBOX_REDIS_DB" Default="" Mode="" Description="Redis DB - (string) Optional Redis database to connect to. " Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="MB_DOWNLOAD_TIMEOUT_SECONDS" Target="MB_DOWNLOAD_TIMEOUT_SECONDS" Default="60" Mode="" Description="(integer) Default to 60. Timeout in seconds that Facebox will use when it downloads files, for example to download the state file. " Type="Variable" Display="always" Required="false" Mask="false">60</Config>
   <Config Name="MB_FACEBOX_READ_ONLY" Target="MB_FACEBOX_READ_ONLY" Default="false" Mode="" Description="(bool) Defaults to false - If true Facebox will be read only. Teaching and updating state will be disabled. Be sure to provide MB_FACEBOX_STATE_URL to set the initial state, otherwise the box will be useless. " Type="Variable" Display="always" Required="false" Mask="false">false</Config>

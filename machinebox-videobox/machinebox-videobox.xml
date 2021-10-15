@@ -14,7 +14,6 @@
   <Overview>Videobox extracts frames from videos and passes them to other Machine Box boxes for processing. </Overview>
   <Category>Productivity: Tools: Status:Stable</Category>
   <WebUI>http://[IP]:[PORT:8084]</WebUI>
-  <TemplateURL/>
   <Icon>https://github.com/corgan2222/unraid-templates/raw/main/img/videobox.jpg</Icon>
   <ExtraParams/>
   <PostArgs/>

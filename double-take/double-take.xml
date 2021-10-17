@@ -30,8 +30,15 @@
       </Port>
     </Publish>
   </Networking>
-  <Data/>
+  <Data>
+  <Volume>
+    <HostDir>/mnt/user/appdata/double-take</HostDir>
+    <ContainerDir>/.storage</ContainerDir>
+    <Mode>rw</Mode>
+  </Volume>
+</Data>
   <Environment/>
   <Labels/>
   <Config Name="WebUI HTTP Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+  <Config Name="Data" Target="/.storage" Default="" Mode="rw" Description="Container Path: /.storage" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/double-take</Config>
 </Container>

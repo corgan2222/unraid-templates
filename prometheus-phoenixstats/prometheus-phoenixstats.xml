@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Prometheus-phoenixstats</Name>
+  <Repository>stefanknaak/prometheus-phoenixstats:latest</Repository>
+  <Registry>https://hub.docker.com/r/stefanknaak/prometheus-phoenixstats</Registry>
+  <TemplateURL>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/prometheus-phoenixstats/prometheus-phoenixstats.xml</TemplateURL>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/114590-support-corgans-docker-repository-double-take-facebox-tagbox-videobox/</Support>
+  <Project>https://machinebox.io/docs/videobox</Project>
+  <Overview>Simple container for displaying stats from any PhoenixMiner instance. Made to go with PhoenixMiner-AMD.</Overview>
+  <Category>Cloud: Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:9192]/metrics</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/corgan2222/Prometheus-phoenixstats-Exporter/master/phoenixstats-logo.png</Icon>
+  <ExtraParams> </ExtraParams>
+  <PostArgs> </PostArgs>
+  <CPUset/>
+   <DonateText/>
+  <DonateLink/>
+  <Description>Simple container for displaying stats from any PhoenixMiner instance. Made to go with PhoenixMiner-AMD. </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9192</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value>Unraid</Value>
+      <Name>S_NAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>S_HOST</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>5450</Value>
+      <Name>S_PORT</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Apache" Target="80" Default="9192" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">9192</Config>
+  <Config Name="Server Name" Target="S_NAME" Default="Unraid" Mode="" Description="Server name for miner (Can be set to anything)" Type="Variable" Display="always" Required="false" Mask="false">Unraid</Config>
+  <Config Name="Miner Host" Target="S_HOST" Default="unraid.local" Mode="" Description="Host for miner (usually an IP)" Type="Variable" Display="always" Required="false" Mask="false">192.168.2.254</Config>
+  <Config Name="Miner Port" Target="S_PORT" Default="5450" Mode="" Description="Port shared by miner over http (usually 5450)" Type="Variable" Display="always" Required="false" Mask="false">5450</Config>
+</Container>

@@ -8,7 +8,7 @@
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/114590-support-corgans-docker-repository-double-take-facebox-tagbox-videobox/</Support>
-  <Project>https://machinebox.io/docs/videobox</Project>
+  <Project>https://github.com/corgan2222/Prometheus-phoenixstats-Exporter</Project>
   <Overview>Simple container for displaying stats from any PhoenixMiner instance. Made to go with PhoenixMiner-AMD.</Overview>
   <Category>Cloud: Productivity: Tools:</Category>
   <WebUI>http://[IP]:[PORT:9192]/metrics</WebUI>
@@ -19,7 +19,9 @@
   <CPUset/>
    <DonateText/>
   <DonateLink/>
-  <Description>Simple container for displaying stats from any PhoenixMiner instance. Made to go with PhoenixMiner-AMD. </Description>
+  <Description>Simple container for displaying stats from any PhoenixMiner instance. Made to go with PhoenixMiner-AMD. 
+              Export URL: The URL for the exportet metrics is: 'http://YOURunRAIDIP:9192/metrics' (to use it in Prometheus add the target: 'YOURunRAIDIP:9192' to your Prometheus yaml).
+  </Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>

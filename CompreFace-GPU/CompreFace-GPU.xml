@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>CompreFace-GPU</Name>
+  <Repository>exadel/compreface:0.6.1-arcface-r100-gpu</Repository>
+  <Registry>https://hub.docker.com/r/exadel/compreface/</Registry>
+  <Beta>True</Beta>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/114590-support-corgans-docker-repository/</Support>
+  <Project>https://github.com/exadel-inc/CompreFace</Project>
+  <Overview>[b]CompreFace is a leading free and open-source face recognition system [/b]  [br] &#xD;
+ [br] &#xD;
+1. Install Unraid Nvidia Plugin (available in the community apps store): https://forums.unraid.net/topic/98978-plugin-nvidia-driver/ [br] &#xD;
+2. You can choose from different GPU Builds: [br] &#xD;  [br] &#xD;
+[b]Arcface-R100-GPU[/b],  (compreface:0.6.1-arcface-r100-gpu) - The most accurate model  [br] &#xD;
+[b]MobileNet-GPU[/b], (compreface:0.6.1-mobilenet-gpu) - The fastest model  [br] &#xD;  [br] &#xD;
+More Infos: https://github.com/exadel-inc/CompreFace/blob/master/custom-builds/README.md
+ [br] &#xD;
+</Overview>
+  <Category>HomeAutomation: Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8000]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/CompreFace-GPU/CompreFace-GPU.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/img/compreface-gpu.png</Icon>
+  <ExtraParams>--runtime=nvidia </ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>[b]CompreFace is a leading free and open-source face recognition system [/b]  [br] &#xD;
+ [br] &#xD;
+1. Install Unraid Nvidia Plugin (available in the community apps store): https://forums.unraid.net/topic/98978-plugin-nvidia-driver/ [br] &#xD;
+2. You can choose from different GPU Builds: [br] &#xD;  [br] &#xD;
+[b]Arcface-R100-GPU[/b],  (compreface:0.6.1-arcface-r100-gpu) - The most accurate model  [br] &#xD;
+[b]MobileNet-GPU[/b], (compreface:0.6.1-mobilenet-gpu) - The fastest model  [br] &#xD;  [br] &#xD;
+More Infos: https://github.com/exadel-inc/CompreFace/blob/master/custom-builds/README.md
+ [br] &#xD;
+</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8000</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+ 
+  <Environment/>
+  <Labels/>
+  <Config Name="WebUI HTTP Port" Target="80" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+ 
+</Container>

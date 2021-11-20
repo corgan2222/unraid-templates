@@ -20,7 +20,7 @@ More Infos: https://github.com/exadel-inc/CompreFace/blob/master/custom-builds/R
  [br] &#xD;
 </Overview>
   <Category>HomeAutomation: Productivity: Tools:</Category>
-  <WebUI>http://[IP]:[PORT:8000]</WebUI>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/CompreFace-GPU/CompreFace-GPU.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/img/compreface-gpu.png</Icon>
   <ExtraParams>--runtime=nvidia </ExtraParams>

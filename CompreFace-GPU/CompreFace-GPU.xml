@@ -1,23 +1,37 @@
 <?xml version="1.0"?>
-<Container version="2">
+<Container version="3">
   <Name>CompreFace-GPU</Name>
-  <Repository>exadel/compreface:0.6.1-arcface-r100-gpu</Repository>
+  <Repository>exadel/compreface:0.6.1-mobilenet-gpu</Repository>
   <Registry>https://hub.docker.com/r/exadel/compreface/</Registry>
-  <Beta>True</Beta>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/114590-support-corgans-docker-repository/</Support>
   <Project>https://github.com/exadel-inc/CompreFace</Project>
-  <Overview>[b]CompreFace is a leading free and open-source face recognition system [/b]  [br] &#xD;
- [br] &#xD;
-1. Install Unraid Nvidia Plugin (available in the community apps store): https://forums.unraid.net/topic/98978-plugin-nvidia-driver/ [br] &#xD;
-2. You can choose from different GPU Builds: [br] &#xD;  [br] &#xD;
-[b]Arcface-R100-GPU[/b],  (compreface:0.6.1-arcface-r100-gpu) - The most accurate model  [br] &#xD;
-[b]MobileNet-GPU[/b], (compreface:0.6.1-mobilenet-gpu) - The fastest model  [br] &#xD;  [br] &#xD;
-More Infos: https://github.com/exadel-inc/CompreFace/blob/master/custom-builds/README.md
- [br] &#xD;
+  <Overview>&#xD;
+  [b]CompreFace is a leading free and open-source face recognition system [/b]  [br] &#xD;
+  [br] &#xD;
+  1. Install Unraid Nvidia Plugin (available in the community apps store): https://forums.unraid.net/topic/98978-plugin-nvidia-driver/ [br] &#xD;
+  2. You can choose from different GPU Builds: [br] &#xD;
+  [br] &#xD;
+  [b]Arcface-R100-GPU[/b],  (compreface:0.6.1-arcface-r100-gpu) - The most accurate model  [br] &#xD;
+  [b]MobileNet-GPU[/b], (compreface:0.6.1-mobilenet-gpu) - The fastest model  [br] &#xD;
+  More Infos: https://github.com/exadel-inc/CompreFace/blob/master/custom-builds/README.md [br][br] &#xD;
+&#xD;
+  [b]Database[/b][br][br]&#xD;
+  by default this App install a PostgresSQL Server. The Data are stored in the given Appdata Folder.[br]&#xD;
+  If you allready have your own Postgres Server running, you can setup a external Server. [br]&#xD;
+  1. Click on "Show more settings" [br]&#xD;
+  2. Enter the Username and URL of your PostgresSQL Server. Note: The User has to be SuperUser Rights [br]&#xD;
+  3. Set the Variable EXTERNAL_DB to "True" [br]&#xD;
+  The URL should look like this: [br][br]&#xD;
+  &#xD;
+  jdbc:postgresql://IP:PORT/DATABASENAME[br]&#xD;
+  like:[br]&#xD;
+  jdbc:postgresql://192.168.1.254:5432/compreface[br]&#xD;
+  &#xD;
+  [br]&#xD;
 </Overview>
   <Category>HomeAutomation: Productivity: Tools:</Category>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
@@ -28,14 +42,31 @@ More Infos: https://github.com/exadel-inc/CompreFace/blob/master/custom-builds/R
   <CPUset/>
   <DonateText/>
   <DonateLink/>
-  <Description>[b]CompreFace is a leading free and open-source face recognition system [/b]  [br] &#xD;
- [br] &#xD;
-1. Install Unraid Nvidia Plugin (available in the community apps store): https://forums.unraid.net/topic/98978-plugin-nvidia-driver/ [br] &#xD;
-2. You can choose from different GPU Builds: [br] &#xD;  [br] &#xD;
-[b]Arcface-R100-GPU[/b],  (compreface:0.6.1-arcface-r100-gpu) - The most accurate model  [br] &#xD;
-[b]MobileNet-GPU[/b], (compreface:0.6.1-mobilenet-gpu) - The fastest model  [br] &#xD;  [br] &#xD;
-More Infos: https://github.com/exadel-inc/CompreFace/blob/master/custom-builds/README.md
- [br] &#xD;
+  <Description>&#xD;
+  [b]CompreFace is a leading free and open-source face recognition system [/b]  [br] &#xD;
+  [br] &#xD;
+  1. Install Unraid Nvidia Plugin (available in the community apps store): https://forums.unraid.net/topic/98978-plugin-nvidia-driver/ [br] &#xD;
+  2. You can choose from different GPU Builds: [br] &#xD;
+  [br] &#xD;
+  [b]Arcface-R100-GPU[/b],  (compreface:0.6.1-arcface-r100-gpu) - The most accurate model  [br] &#xD;
+  [b]MobileNet-GPU[/b], (compreface:0.6.1-mobilenet-gpu) - The fastest model  [br] &#xD;
+  More Infos: https://github.com/exadel-inc/CompreFace/blob/master/custom-builds/README.md [br][br] &#xD;
+&#xD;
+  [b]Database[/b][br][br]&#xD;
+  by default this App install a PostgresSQL Server. The Data are stored in the given Appdata Folder.[br]&#xD;
+  If you allready have your own Postgres Server running, you can setup a external Server. [br]&#xD;
+  1. Click on "Show more settings" [br]&#xD;
+  2. Enter the Username and URL of your PostgresSQL Server. Note: The User has to be SuperUser Rights [br]&#xD;
+  3. Set the Variable EXTERNAL_DB to "True" [br]&#xD;
+  The URL should look like this: [br][br]&#xD;
+  &#xD;
+  jdbc:postgresql://IP:PORT/DATABASENAME[br]&#xD;
+  like:[br]&#xD;
+  jdbc:postgresql://192.168.1.254:5432/compreface[br]&#xD;
+  &#xD;
+  [br]&#xD;
+&#xD;
+&#xD;
 </Description>
   <Networking>
     <Mode>bridge</Mode>
@@ -47,9 +78,40 @@ More Infos: https://github.com/exadel-inc/CompreFace/blob/master/custom-builds/R
       </Port>
     </Publish>
   </Networking>
- 
-  <Environment/>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/compreface</HostDir>
+      <ContainerDir>/var/lib/postgresql/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>false</Value>
+      <Name>EXTERNAL_DB</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>jdbc:postgresql://192.168.0.000:5432/compreface</Value>
+      <Name>POSTGRES_URL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>POSTGRES_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>POSTGRES_USER</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
   <Labels/>
-  <Config Name="WebUI HTTP Port" Target="80" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
- 
+  <Config Name="WebUI HTTP Port" Target="80" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8800</Config>
+  <Config Name="Data Folder" Target="/var/lib/postgresql/data" Default="" Mode="rw" Description="Container Path: /var/lib/postgresql/data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/compreface</Config>
+  <Config Name="EXTERNAL_DB" Target="EXTERNAL_DB" Default="" Mode="" Description="Container Variable: EXTERNAL_DB" Type="Variable" Display="advanced-hide" Required="false" Mask="false">false</Config>
+  <Config Name="POSTGRES_URL" Target="POSTGRES_URL" Default="" Mode="" Description="Container Variable: POSTGRES_URL" Type="Variable" Display="advanced-hide" Required="false" Mask="false">jdbc:postgresql://192.168.2.254:5432/compreface</Config>
+  <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Container Variable: POSTGRES_PASSWORD" Type="Variable" Display="advanced-hide" Required="false" Mask="true">corgan80982</Config>
+  <Config Name="POSTGRES_USER" Target="POSTGRES_USER" Default="" Mode="" Description="Container Variable: POSTGRES_USER" Type="Variable" Display="advanced-hide" Required="false" Mask="false">compreface</Config>
 </Container>

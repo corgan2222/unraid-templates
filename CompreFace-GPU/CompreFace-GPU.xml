@@ -19,7 +19,7 @@
   [b]MobileNet-GPU[/b], (compreface:0.6.1-mobilenet-gpu) - The fastest model  [br] &#xD;
   More Infos: https://github.com/exadel-inc/CompreFace/blob/master/custom-builds/README.md [br][br] &#xD;
 &#xD;
-  [b]Database[/b][br][br]&#xD;
+  [b][u][span style='color: #E80000;']Database Configuration[/span][/u][/b][br]
   by default this App install a PostgresSQL Server. The Data are stored in the given Appdata Folder.[br]&#xD;
   If you allready have your own Postgres Server running, you can setup a external Server. [br]&#xD;
   1. Click on "Show more settings" [br]&#xD;
@@ -52,7 +52,7 @@
   [b]MobileNet-GPU[/b], (compreface:0.6.1-mobilenet-gpu) - The fastest model  [br] &#xD;
   More Infos: https://github.com/exadel-inc/CompreFace/blob/master/custom-builds/README.md [br][br] &#xD;
 &#xD;
-  [b]Database[/b][br][br]&#xD;
+  [b][u][span style='color: #E80000;']Database Configuration[/span][/u][/b][br]
   by default this App install a PostgresSQL Server. The Data are stored in the given Appdata Folder.[br]&#xD;
   If you allready have your own Postgres Server running, you can setup a external Server. [br]&#xD;
   1. Click on "Show more settings" [br]&#xD;

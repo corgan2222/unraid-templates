@@ -13,7 +13,7 @@
   <Project>https://machinebox.io/docs/tagbox</Project>
   <Overview>Tagbox lets you identify the content of images by getting a list of ordered tags. </Overview>
   <Category>Productivity: Tools: Status:Stable</Category>
-  <WebUI>http://[IP]:[PORT:8082]</WebUI>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
   <Icon>https://github.com/corgan2222/unraid-templates/raw/main/img/tagbox.jpg</Icon>
   <ExtraParams/>
   <PostArgs/>

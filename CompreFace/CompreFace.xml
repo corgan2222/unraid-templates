@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <Container version="3">
   <Name>CompreFace</Name>
-  <Repository>exadel/compreface:0.6.1</Repository>
+  <Repository>exadel/compreface:1.2.0</Repository>
+  <Date>2024/03/15</Date>
   <Registry>https://hub.docker.com/r/exadel/compreface/</Registry>
    <Network>bridge</Network>
   <MyIP/>

@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <Container version="3">
   <Name>CompreFace-GPU</Name>
-  <Repository>exadel/compreface:0.6.1-mobilenet-gpu</Repository>
+  <Repository>exadel/compreface:1.2.0-mobilenet-gpu</Repository>
   <Registry>https://hub.docker.com/r/exadel/compreface/</Registry>
+  <Date>2024/03/15</Date>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>

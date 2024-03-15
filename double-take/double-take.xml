@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>double-take</Name>
-  <Date>2021/10/09</Date>
+  <Date>2024/03/15</Date>
   <TemplateURL>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/machinebox-facebox/machinebox-facebox.xml</TemplateURL>  
-  <Repository>jakowenko/double-take</Repository>
-  <Registry>https://hub.docker.com/r/jakowenko/double-take/</Registry>
+  <Repository>skrashevich/double-take:latest</Repository>
+  <Registry>https://hub.docker.com/r/skrashevich/double-take/</Registry>
   <Network>bridge</Network>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/114590-support-corgans-docker-repository/</Support>
-  <Project>https://hub.docker.com/r/jakowenko/double-take</Project>
+  <Project>https://github.com/skrashevich/double-take</Project>
   <Overview>Unified UI and API for processing and training images for facial recognition.  </Overview>
   <Category>HomeAutomation: Productivity: Tools:</Category>
   <WebUI>http://[IP]:[PORT:3000]</WebUI>

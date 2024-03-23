@@ -14,7 +14,7 @@
   <WebUI></WebUI>
   <TemplateURL/>
   <Icon>https://github.com/corgan2222/unraid-templates/blob/f1d341af2746fc9b20080dc5847d03b3a8647111/img/avatar.png</Icon>
-  <ExtraParams> </ExtraParams>
+  <ExtraParams>--restart unless-stopped  </ExtraParams>
   <PostArgs> </PostArgs>
   <CPUset/>
    <DonateText/>

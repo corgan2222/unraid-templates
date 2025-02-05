@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Date>2025/02/05</Date>
+  <TemplateURL>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/ManictimeServer/ManictimeServerox.xml</TemplateURL>
+  <Name>ManictimeServer</Name>
+  <Repository>manictime/manictimeserver:latest</Repository>
+  <Registry>https://hub.docker.com/r/manictime/manictimeserver</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/114590-support-corgans-docker-repository-double-take-facebox-tagbox-videobox-compreface</Support>
+  <Project>https://www.manictime.com/</Project>
+  <Overview>  [b]ManicTime Server receives data from ManicTime clients installed on your network and provides reports, which you can view with a web browser. [/b][br]
+    After creating the container, stop the container and run this command in a shell (SSH Login or GUI Console) on your unraid server, to create the admin user. [br]
+    Change the directory if you have used a different path (/mnt/user/appdata/manictimeserver) and be sure to change the username and password!.[br]&#xD; 
+    docker run -v /mnt/user/appdata/manictimeserver:/app/Data  -p 8080:8080 --rm --entrypoint dotnet manictime/manictimeserver ManicTimeServer.dll addadmin -u admin@unraidserver.com -p someSecretPassword 
+    [br]&#xD;
+    After that, you can start the container as usual. [br]
+    https://hub.docker.com/r/manictime/manictimeserver/
+  </Overview>
+  <Category>Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <Icon>https://raw.githubusercontent.com/corgan2222/unraid-templates/main/img/manictimeserver.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>
+    ManicTime server enables you to share your ManicTime data with your colleagues. &#xD;&#xD;
+      ManicTime Server receives data from ManicTime clients installed on your network and provides reports, which you can view with a web browser. It is useful for teams or companies of any size as well as single users working on multiple machines. It is an on-site application, you install it on your machines. Since it is running on your machines, the data never leaves your site.    
+  </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/manictimeserver</HostDir>
+      <ContainerDir>/app/Data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>   
+  <Requires/>
+  <Config Name="data" Target="/app/Data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/manictimeserver</Config>
+  <Config Name="Port" Target="8080" Default="8080" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+</Container>

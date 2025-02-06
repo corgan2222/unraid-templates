@@ -13,7 +13,7 @@
   <Support>https://forums.unraid.net/topic/114590-support-corgans-docker-repository/</Support>
   <Overview>Videobox extracts frames from videos and passes them to other Machine Box boxes for processing. </Overview>
   <Category>Productivity: Tools: Status:Stable</Category>
-  <WebUI>http://[IP]:[PORT:8084]</WebUI>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
   <Icon>https://github.com/corgan2222/unraid-templates/raw/main/img/videobox.jpg</Icon>
   <ExtraParams/>
   <PostArgs/>
